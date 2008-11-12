@@ -8,7 +8,7 @@
   <name>submitit</name>
   <inceptionYear>2008</inceptionYear>
   <properties>
-    <scala.version>2.7.2</scala.version>
+    <scala.version>2.7.1</scala.version>
   </properties>
 
   <repositories>
@@ -41,13 +41,8 @@
     </dependency>
     <dependency>
       <groupId>net.liftweb</groupId>
-      <artifactId>lift-core</artifactId>
+      <artifactId>lift-webkit</artifactId>
       <version>0.10-SNAPSHOT</version>
-    </dependency>
-    <dependency>
-      <groupId>org.apache.derby</groupId>
-      <artifactId>derby</artifactId>
-      <version>10.2.2.0</version>
     </dependency>
     <dependency>
       <groupId>javax.servlet</groupId>
