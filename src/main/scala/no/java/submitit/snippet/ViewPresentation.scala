@@ -12,7 +12,7 @@ class ViewPresentation {
   val speaker2 = new Speaker("Jon Anders Teigen", "mail@jteigen.com", "Developer at JPro", null)
   val speaker3 = new Speaker("Fredrik Vraalsen", "fredrik@vraalsen.no", "Developer at KnowIT", null)
   val speakers = speaker1 :: speaker2 :: speaker3 :: Nil
-  val presentation = new Presentation("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Cras pellentesque.", 
+  val presentation = Presentation("Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Cras pellentesque.", 
                                       speakers, 
                                       """Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Ut tortor quam, semper in, aliquet ac, posuere ac, leo. Phasellus justo lectus, interdum eu, molestie vel, rutrum vel, enim. Pellentesque ultrices magna et erat. Integer velit urna, aliquam sed, sodales quis, semper a, sem. Proin convallis metus sit amet sapien. Nunc massa elit, pretium sed, interdum id, placerat vel, tellus. Duis ullamcorper nulla. Mauris eget tortor in enim vestibulum ultrices. 
 Sed sapien diam, iaculis non, ullamcorper sagittis, rhoncus ac, eros. Donec semper, sapien a consequat lobortis, nisl arcu elementum metus, ac dapibus sem neque sed diam. Morbi eget nisl. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. In hac habitasse platea dictumst. Vestibulum rhoncus semper justo.""", 
@@ -37,13 +37,13 @@ amet""",
   
   def convList(text: String): NodeSeq =
     <ul>
-    { text.split("\n").map{line => <li>{line}</li> }
+    { text.split("\n").map{line => <li>{line}</li> } }
   </ul>
   
   def show(xhtml: NodeSeq): NodeSeq = {
     bind("pres", xhtml, 
          "title" --> presentation.title,
-         "abstract" --> convPara(presentation.`abstract`),
+         "abstract" --> convPara(presentation.abstr),
          "speakers" --> <xml:group>{speakers.map{speaker => <p><b>{speaker.name}</b> ({speaker.email})<br/>{speaker.bio}</p>}}</xml:group>,
          "outline" --> convList(presentation.outline),
          "description" --> convPara(presentation.description),
