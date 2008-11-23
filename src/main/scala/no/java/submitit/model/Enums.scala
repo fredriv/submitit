@@ -1,9 +1,12 @@
 package no.java.submitit.model
 
-class Language extends Enumeration {
-  val Norwegian, English = Value
+object Language extends Enumeration {
+  val Norwegian = Value("Norwegian")
+  val English = Value("English")
 }
 
-class Level extends Enumeration {
-  val Beginner, Intermediate, Advanced = Value
+object Level extends Enumeration {
+  val Beginner = Value("Beginner")
+  val Intermediate = Value("Intermediate")
+  val Advanced = Value("Advanced")
 }

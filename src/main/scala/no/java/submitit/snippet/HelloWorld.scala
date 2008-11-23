@@ -11,9 +11,10 @@ class HelloWorld {
   
   def contacts = service.getContacts().toList
   
-  def howdy = <div>
-  <table border="1">
-  <tr><th>Id</th><th>Name</th><th>E-mail</th></tr>
+  def hello = <span>Hello world!</span>
+    
+  def howdy = <table border="1">
+    <tr><th>Id</th><th>Name</th><th>E-mail</th></tr>
   {contacts.map(contact => 
     <tr>
     <td>{contact.getId}</td>
@@ -21,6 +22,5 @@ class HelloWorld {
       <td>{contact.getEmailAddresses.map(email => email.getEmailAddress).mkString(" FOOBAR ")}</td>
       </tr>)}
   </table>
-  </div>
 }
 
